@@ -24,7 +24,7 @@ process DOWSER_LINEAGES {
     if (workflow.profile.tokenize(',').intersect(['conda', 'mamba']).size() >= 1) {
         error "nf-core/airrflow currently does not support Conda. Please use a container profile instead."
     }
-    container = 'igortrue/immcantation:latest'
+    container 'igortrue/immcantation:latest'
 
     input:
     tuple val(meta), path(tabs)
